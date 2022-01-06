@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nle-bret <nle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 13:42:09 by nle-bret          #+#    #+#             */
-/*   Updated: 2022/01/06 16:46:51 by nle-bret         ###   ########.fr       */
+/*   Created: 2022/01/06 15:49:37 by nle-bret          #+#    #+#             */
+/*   Updated: 2022/01/06 17:00:03 by nle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "ft_printf.h"
 
-int ft_printf(const char *format, char c);
-int fct_c(char c);
+int main(int argc, char **argv)
+{
+	long int	ret;
 
-#endif
+	(void)argc;
+	ret = ft_printf(argv[1], 'p');
+	printf("\n%ld", ret);
+	return (0);
+}
