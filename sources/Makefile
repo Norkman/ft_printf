@@ -6,7 +6,7 @@
 #    By: nle-bret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 22:03:57 by nle-bret          #+#    #+#              #
-#    Updated: 2022/01/06 14:24:55 by nle-bret         ###   ########.fr        #
+#    Updated: 2022/01/07 15:33:42 by nle-bret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,9 @@ SRC		= ft_bzero.c\
           ft_split.c\
           ft_itoa.c\
           ft_strmapi.c\
-          ft_striteri.c
+          ft_striteri.c\
+		  ft_convert_base.c\
+		  ft_convert_base2.c
 
 SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
 
