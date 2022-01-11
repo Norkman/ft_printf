@@ -12,7 +12,7 @@
 
 #include "libft.h" 
 
-void	ft_putnbr_base(long nbr, char *base, char *dest, int i)
+void	ft_putnbr_base_2(long nbr, char *base, char *dest, int i)
 {
 	long	max;
 
@@ -30,7 +30,7 @@ void	ft_putnbr_base(long nbr, char *base, char *dest, int i)
 long	ft_abs(long nb)
 {
 	if (nb < 0)
-	{ 
+	{
 		nb = -nb;
 	}
 	return (nb);
@@ -66,12 +66,12 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		dest = malloc(sizeof(*dest) * (i + 2));
 		dest[0] = '-';
 		nb = -nb;
-		ft_putnbr_base(nb, base_to, dest + 1, i);
+		ft_putnbr_base_2(nb, base_to, dest + 1, i);
 	}
 	else
 	{
 		dest = malloc(sizeof(*dest) * (i + 1));
-		ft_putnbr_base(nb, base_to, dest, i);
+		ft_putnbr_base_2(nb, base_to, dest, i);
 	}
 	return (dest);
 }

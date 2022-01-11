@@ -12,7 +12,29 @@
 
 #include "ft_printf.h"
 
-int fct_c(va_list args)
+int	fct_x(va_list args)
+{
+	long int	nbr;
+	int			len_nbr;
+
+	nbr = va_arg(args, long int);
+	len_nbr = ft_len_nbr(nbr, "0123456789abcdef");
+	ft_putnbr_base(nbr, "0123456789abcdef");
+	return (len_nbr);
+}
+
+int	fct_x_up(va_list args)
+{
+	long int	nbr;
+	int			len_nbr;
+
+	nbr = va_arg(args, long int);
+	len_nbr = ft_len_nbr(nbr, "0123456789ABCDEF");
+	ft_putnbr_base(nbr, "0123456789ABCDEF");
+	return (len_nbr);
+}
+
+int	fct_c(va_list args)
 {
 	char	c;
 
@@ -26,19 +48,28 @@ int	fct_s(va_list args)
 	char	*str;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
 	ft_putstr_fd(str, 1);
-	return(ft_strlen(str));
+	return (ft_strlen(str));
 }
 
 int	fct_p(va_list args)
 {
-	unsigned long long	p_int;
-	char				*str;
-	char				*str_p;
+	unsigned long long	int_v;
+	int					len_nbr;
 
-	p_int = va_arg(args, unsigned long long);
-	str = ft_itoa(p_int);
-	str_p = ft_convert_base(str, "0123456789", "0123456789abcdef");
-	ft_putstr_fd(str, 1);
-	return(ft_strlen(str_p));
+	int_v = va_arg(args, unsigned long long);
+	if (int_v == 0)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
+	len_nbr = ft_len_nbr(int_v, "0123456789abcdef");
+	ft_putstr_fd("0x", 1);
+	ft_putnbr_base((long int)int_v, "0123456789abcdef");
+	return (len_nbr + 2);
 }

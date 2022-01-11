@@ -66,6 +66,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
-int	ft_atoi_base(char *str, char *base);
-int	checkbase(char *base);
+int		ft_atoi_base(char *str, char *base);
+int		checkbase(char *base);
+char	*ft_llutoa(unsigned long long num);
+long	ft_len_nbr(long nbr, char *base);
+void	ft_putnbr_base(long int nbr, char *base);
+char	*ft_utoa(int n);
+
 #endif

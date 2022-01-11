@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-long int my_read(const char *format, long int pos, long int *ret)
+long int	my_read(const char *format, long int pos, long int *ret)
 {
 	while (format[pos] != '%' && format[pos])
 	{
@@ -33,25 +33,23 @@ int	filter(const char *format, long int pos, va_list args)
 		return (fct_s(args));
 	else if (format[pos + 1] == 'p')
 		return (fct_p(args));
-	/*
 	else if (format[pos + 1] == 'd')
-		return (fct_d());
+		return (fct_d(args));
 	else if (format[pos + 1] == 'i')
-		return (fct_i());
+		return (fct_d(args));
 	else if (format[pos + 1] == 'u')
-		return (fct_u());
+		return (fct_u(args));
 	else if (format[pos + 1] == 'x')
-		return (fct_x());
+		return (fct_x(args));
 	else if (format[pos + 1] == 'X')
-		return (fct_X());
+		return (fct_x_up(args));
 	else if (format[pos + 1] == '%')
-		return (fct_%());
-	*/
+		return (fct_perc(format[pos + 1]));
 	write(1, &format[pos + 1], 1);
 	return (1);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	long int	ret;
@@ -70,4 +68,3 @@ int ft_printf(const char *format, ...)
 	va_end(args);
 	return (ret);
 }
-

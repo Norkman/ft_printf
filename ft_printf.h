@@ -17,9 +17,14 @@
 # include <stdio.h>
 # include <unistd.h>
 
-int ft_printf(const char *format, ...);
-int fct_c(va_list args);
+int	ft_printf(const char *format, ...);
+int	fct_c(va_list args);
 int	fct_s(va_list args);
 int	fct_p(va_list args);
+int	fct_x(va_list args);
+int	fct_x_up(va_list args);
+int	fct_d(va_list args);
+int	fct_u(va_list args);
+int	fct_perc(char c);
 
 #endif

@@ -56,7 +56,10 @@ SRC		= ft_bzero.c\
           ft_strmapi.c\
           ft_striteri.c\
 		  ft_convert_base.c\
-		  ft_convert_base2.c
+		  ft_convert_base2.c\
+		  ft_llutoa.c\
+		  ft_putnbr_base.c\
+		  ft_utoa.c
 
 SRCS	= ${addprefix ${SRC_DIR}, ${SRC}}
 
@@ -74,7 +77,7 @@ OBJS	= ${SRCS:.c=.o}
 
 B_OBJS	= ${BONUS:.c=.o}
 
-CC		= clang
+CC		= gcc
 
 #so:
 #	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
