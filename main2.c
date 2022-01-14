@@ -11,18 +11,26 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <limits.h>
 
 int main(int argc, char **argv)
 {
-	long int	ret;
-	int	pointer;
+	//long int	ret;
+	//int	pointer;
+	int		i;
 
 	(void)argc;
 	(void)argv;
-	pointer = 2;
+	i = 0;
 	//ret = ft_printf(argv[1], 'p', "ta mere la pute", pointer);
-	ret = ft_printf(argv[1], pointer);
-	printf("\n%%\n");
-	printf("\n%ld\n", ret);
+	i = printf("%p", ULONG_MAX);
+	printf("  %d\n", i);
+	i = ft_printf("%p", ULONG_MAX);
+	printf("  %d\n", i);
+	i = printf("%p", -ULONG_MAX);
+	printf("  %d\n", i);
+	i = ft_printf("%p", -ULONG_MAX);
+	printf("  %d\n", i);
+	//printf("\n%ld\n", ret);
 	return (0);
 }

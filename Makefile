@@ -17,7 +17,7 @@ ifeq ($(DEBUG), 1)
     CFLAGS += -g3 -fsanitize=address
 endif
 
-NAME	= libfprintf.a
+NAME	= libftprintf.a
 
 SRC		= ft_printf.c\
 		  ft_printf_utils.c\

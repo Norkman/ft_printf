@@ -14,10 +14,10 @@
 
 int	fct_x(va_list args)
 {
-	long int	nbr;
-	int			len_nbr;
+	unsigned int	nbr;
+	int				len_nbr;
 
-	nbr = va_arg(args, long int);
+	nbr = va_arg(args, unsigned int);
 	len_nbr = ft_len_nbr(nbr, "0123456789abcdef");
 	ft_putnbr_base(nbr, "0123456789abcdef");
 	return (len_nbr);
@@ -25,10 +25,10 @@ int	fct_x(va_list args)
 
 int	fct_x_up(va_list args)
 {
-	long int	nbr;
-	int			len_nbr;
+	long long int	nbr;
+	int				len_nbr;
 
-	nbr = va_arg(args, long int);
+	nbr = va_arg(args, unsigned int);
 	len_nbr = ft_len_nbr(nbr, "0123456789ABCDEF");
 	ft_putnbr_base(nbr, "0123456789ABCDEF");
 	return (len_nbr);
@@ -60,9 +60,15 @@ int	fct_s(va_list args)
 int	fct_p(va_list args)
 {
 	unsigned long long	int_v;
-	int					len_nbr;
+	long				len_nbr;
 
 	int_v = va_arg(args, unsigned long long);
+	if (int_v == 18446744073709551615)
+	{
+		ft_putstr_fd("0x", 1);
+		ft_putstr_fd("ffffffffffffffff", 1);
+		return (16 + 2);
+	}
 	if (int_v == 0)
 	{
 		ft_putstr_fd("(nil)", 1);
@@ -70,6 +76,6 @@ int	fct_p(va_list args)
 	}
 	len_nbr = ft_len_nbr(int_v, "0123456789abcdef");
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_base((long int)int_v, "0123456789abcdef");
+	ft_putnbr_base(int_v, "0123456789abcdef");
 	return (len_nbr + 2);
 }

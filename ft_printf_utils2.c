@@ -22,6 +22,7 @@ int	fct_d(va_list args)
 	str = ft_itoa(v_int);
 	ft_putstr_fd(str, 1);
 	len_str = ft_strlen(str);
+	free(str);
 	return (len_str);
 }
 
@@ -35,6 +36,7 @@ int	fct_u(va_list args)
 	str = ft_utoa(v_unsint);
 	ft_putstr_fd(str, 1);
 	len_str = ft_strlen(str);
+	free(str);
 	return (len_str);
 }
 

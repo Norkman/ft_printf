@@ -19,7 +19,7 @@ void	ft_putchar(int str)
 
 int	len_of_base(char *base)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
 	while (base[i] != 0)
@@ -48,28 +48,22 @@ int	ft_is_error(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(long int nbr, char *base)
+void	ft_putnbr_base(unsigned long long nb, char *base)
 {
-	long int	num_in_base;
-	long		nb;
+	int	num_in_base;
 
-	nb = nbr;
+	num_in_base = 0;
 	if (ft_is_error(base) == 1)
 	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -nb;
-		}
-		if (nb < len_of_base(base))
+		if (nb < (unsigned long long)len_of_base(base))
 		{
 			ft_putchar(base[nb]);
 		}
-		if (nb > len_of_base(base))
+		if (nb >= (unsigned long long)len_of_base(base))
 		{
 			ft_putnbr_base(nb / len_of_base(base), base);
 			num_in_base = base[nb % len_of_base(base)];
-			write(1, &num_in_base, 1);
+			ft_putchar(num_in_base);
 		}
-	}	
+	}
 }
