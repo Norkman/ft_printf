@@ -63,7 +63,7 @@ int	fct_p(va_list args)
 	long				len_nbr;
 
 	int_v = va_arg(args, unsigned long long);
-	if (int_v == 18446744073709551615)
+	if (int_v == -1)
 	{
 		ft_putstr_fd("0x", 1);
 		ft_putstr_fd("ffffffffffffffff", 1);
