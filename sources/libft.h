@@ -69,7 +69,6 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 int		ft_atoi_base(char *str, char *base);
 int		checkbase(char *base);
 char	*ft_llutoa(unsigned long long num);
-long	ft_len_nbr(long long nbr, char *base);
 void	ft_putnbr_base(unsigned long long nbr, char *base);
 char	*ft_utoa(int n);
 

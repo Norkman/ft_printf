@@ -45,7 +45,4 @@ fclean:	clean
 
 re:	fclean all
 
-%.o: %.c
-	$(CC) $(FLAGS) -I ft_printf.h -c $<  -o $(<:.c=.o)
-
 .PHONY: all clean fclean re

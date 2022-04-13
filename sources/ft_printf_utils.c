@@ -63,10 +63,16 @@ int	fct_p(va_list args)
 	long				len_nbr;
 
 	int_v = va_arg(args, unsigned long long);
+	if (int_v == -1)
+	{
+		ft_putstr_fd("0x", 1);
+		ft_putstr_fd("ffffffffffffffff", 1);
+		return (16 + 2);
+	}
 	if (int_v == 0)
 	{
-		ft_putstr_fd("0x0", 1);
-		return (3);
+		ft_putstr_fd("(nil)", 1);
+		return (5);
 	}
 	len_nbr = ft_len_nbr(int_v, "0123456789abcdef");
 	ft_putstr_fd("0x", 1);

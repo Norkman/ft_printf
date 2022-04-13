@@ -12,19 +12,6 @@
 
 #include "ft_printf.h"
 
-long	ft_len_nbr(unsigned long long nbr, char *base)
-{
-	int	i;
-
-	i = 0;
-	while (nbr >= (unsigned long long)ft_strlen(base))
-	{
-		nbr = nbr / (unsigned long long)ft_strlen(base);
-		i++;
-	}
-	return (i + 1);
-}
-
 int	fct_d(va_list args)
 {
 	int		v_int;
